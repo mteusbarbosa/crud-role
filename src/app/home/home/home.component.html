@@ -8,17 +8,13 @@
     >
       <mat-card class="role-card">
         <mat-card-header>
-          <mat-card-title> {{role.titulo}} </mat-card-title>
-          <mat-card-subtitle>{{role.local}}</mat-card-subtitle>
+          <mat-card-title> {{ role.titulo }} </mat-card-title>
+          <mat-card-subtitle>{{ role.local }}</mat-card-subtitle>
         </mat-card-header>
-        <img
-          mat-card-image
-          [src] ="role.roleUrl"
-          [alt]="role.descricao"
-        />
+        <img mat-card-image [src]="role.roleUrl" [alt]="role.descricao" />
         <mat-card-content>
           <p>
-            {{role.descricao}}
+            {{ role.descricao }}
           </p>
         </mat-card-content>
         <mat-card-actions>
