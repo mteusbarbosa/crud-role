@@ -10,38 +10,31 @@ import { CoursesService } from '../services/courses.service';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
-
 export class CoursesComponent implements OnInit {
-
   courses$: Observable<Course[]>;
-  displayedColumns = ['_id','name', 'category']
+  displayedColumns = ['_id', 'name', 'category'];
 
   //coursesService: CoursesService;
 
   constructor(
     private coursesService: CoursesService,
-    public dialog: MatDialog) {
-    //this.courses = [];
-    //this.coursesService = new CoursesService();
-    this.courses$ = this.coursesService.list()
-    .pipe(
-      catchError(error => {
-        this.onError('Error ao carregar cursos,')
-        return of ([])
+    public dialog: MatDialog
+  ) {
+    this.courses$ = this.coursesService.list().pipe(
+      catchError((error) => {
+        this.onError('Error ao carregar cursos,');
+        return of([]);
       })
     );
-   }
+  }
 
-   onError(errorMsg: string) {
+  onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: errorMsg
+      data: errorMsg,
     });
   }
 
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }

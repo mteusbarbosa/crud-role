@@ -1,3 +1,4 @@
+//import de modulos
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
 
 
 @NgModule({
+  //metadado
   declarations: [
     AppComponent
   ],
@@ -24,6 +26,7 @@ import { AppComponent } from './app.component';
     FlexLayoutModule
   ],
   providers: [],
+  //componente instanciado no inicio da aplicação
   bootstrap: [AppComponent]
 })
 export class AppModule { }

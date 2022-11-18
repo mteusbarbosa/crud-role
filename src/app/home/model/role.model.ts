@@ -1,4 +1,4 @@
-export interface Roles {
+export interface Role {
   _id: string;
   titulo: string;
   local: string;
